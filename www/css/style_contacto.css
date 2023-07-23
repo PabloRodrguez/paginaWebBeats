@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+h1,h2,h3,h4,a{
+  font-family: 'Roboto', sans-serif;
+}
+*,body{
+  margin: 0;
+  padding: 0;
+}
+.contenedor {
+	width: 100%;
+	margin:auto;
+}
+.info_jay{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+h1.logo{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+
+.info_jay li{
+    list-style: none;
+}
+.logo{
+    max-width: 40px;
+}
+
+.contenedor p {
+	margin-bottom:40px;
+}
+.contenedor h1{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 auto;
+
+}
+
+header nav {
+	background:#e26a1a;
+	margin-bottom:10px;
+}
+
+header nav ul {
+	list-style: none;
+	overflow: hidden;
+}
+
+header nav ul li {
+	float: left;
+}
+
+header nav ul li a {
+	display: block;
+	padding:20px;
+	color:#fff;
+	text-decoration: none;
+}
+
+header nav ul li a:hover {
+	background:#078130;
+}
+footer {
+	background-color: #e26a1a;
+	padding: 20px;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+  }
+
+
+
+/* --- Clase que agregaremos cuando el usuario haga scroll --- */
+.menu-fixed {
+	position:fixed;
+	z-index:1000;
+	top:0;
+	max-width:1000px;
+	width:100%;
+	box-shadow:0px 4px 3px rgba(0,0,0,.5);
+}
+
+form {
+    width: 500px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  input[type="submit"] {
+    background-color: #e26a1a;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #a84b0c;
+  }

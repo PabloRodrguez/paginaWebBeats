@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="src/Blanco.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style_contacto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("contactForm");
+
+            form.addEventListener("submit", function (event) {
+              event.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+
+              // Obtener los datos del formulario
+              const formData = new FormData(form);
+
+              // Enviar los datos al archivo PHP utilizando fetch
+              fetch("send_email.php", {
+                method: "POST",
+                body: formData,
+              })
+                .then((response) => response.text())
+                .then((data) => {
+                  if (data === "success") {
+                    // Éxito al enviar el formulario
+                    alert("Gracias por tu mensaje. Nos pondremos en contacto contigo pronto.");
+                    form.reset();
+                  } else {
+                    // Error al enviar el formulario
+                    alert("Ha ocurrido un error al enviar el formulario. Por favor, inténtalo de nuevo.");
+                  }
+                })
+                .catch((error) => {
+                  console.error("Error al enviar el formulario:", error);
+                  alert("Ha ocurrido un error al enviar el formulario. Por favor, inténtalo de nuevo.");
+                });
+            });
+          });
+
+    </script>
+    
+
+    <title>contacto</title>
+</head>
+<body>
+    <header>
+        <div class="contenedor">
+
+			<nav class="menu">
+				<ul>
+                    <li><a href="">
+                        <img class="logo" src="src/Blanco.png" alt="Jay Morball"></a></li>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="proyectos.html">Beats</a></li>
+                        <li><a href="trabajos.html">Trabajos</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="login.html">login</a></li>
+              
+				</ul>
+			</nav>
+		</div>
+    </header>
+    <main>
+        <div>
+            <div class="contenedor">
+                <h1>Jay Morball</h1>                
+                <div class="wrapper animated bounceInLeft">
+                  <div class="info_jay">
+                    <h3>¿Quires trabajar conmigo?</h3>
+                    <ul class="servicios">
+                      <li><i class="fa fa-map-marker"></i> San Carlos, Ñuble, Chile</li>
+                      <li><i class="fa fa-mobile"></i> +56984977614</li>
+                      <li><i class="fa fa-envelope"></i> jaym.contacto@gmail.com</li>
+                    </ul>
+                  </div>
+                  <div class="contacto">  
+                    <form id="contact-form">
+                        <label for="nombre">Nombre:</label><br />
+                        <input type="text" id="nombre" name="nombre" /><br />
+                        <label for="email">Email:</label><br />
+                        <input type="email" id="email" name="email" /><br />
+                        <label for="mensaje">Mensaje:</label><br />
+                        <textarea id="mensaje" name="mensaje"></textarea><br />
+                        <input type="submit" value="Enviar mensaje" />
+                      </form>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </main>
+    <footer>
+      <div class="redes-sociales">
+        <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/jaymorball"><i class="fab fa-instagram"></i></a>
+      </div>
+    </footer>
+</body>
+</html>
